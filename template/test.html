@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>first example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="./js/avalon.js"></script>
+        <script src="./my-js/test.js"></script>
+        <script type="./js/jquery-3.2.1.min.js"></script> -->
+    <script type="text/javascript" src="require.js" data-main="../config/config"></script>
+    <link rel="stylesheet" type="text/css" href="../dest/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css_module/bootstrap.min.css">
+
+</head>
+
+<body>
+    <nav class="navbar row" ms-controller="navController">
+        <div class="head-container">
+            <a href='#' class="col-md-1 home">Home</a>
+            <ul class="nav-list col-md-10">
+                <li class="col-xs-1" ms-for="title in @titles">{{@title}}</li>
+            </ul>
+            <a href="#" class="col-md-1 login">Login</a>
+        </div>
+    </nav>
+    <div ms-controller="contentController">
+        <div class="content-wrap">
+        <div class="row">
+            <div class="col-lg-1 category" >
+                <ul class="category-list">
+                    <li class="category-item" ms-for="item-cate in @category">{{@item-cate}}</li>
+                </ul>
+            </div>
+            <div class="article-list col-lg-9">
+                <ul>
+                    <li ms-for="(tit, content) in @contents" class="article" ms-mouseenter="@callback">
+                        <div class="">
+                            <a class="title">{{@tit}}</a>
+                            <div>{{@content}}</div>
+                            <div class="button-group">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="recommend col-lg-offset1 col-lg-2">
+
+            </div>            
+        </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

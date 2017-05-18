@@ -1,0 +1,72 @@
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+$mg: #f8f8f8;
+
+ul {
+    list-style: none;
+}
+
+.navbar {
+    min-height: 40px !important;
+    background: $mg;
+    .head-container {
+        width: 80%;
+        margin: auto;
+        .home {
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            text-decoration: none;
+        }
+        .login {
+            @extend .home;
+        }
+        ul {
+            height: 40px;
+            line-height: 40px;
+            margin: 0px;
+        }
+        li {
+            float: left;
+            text-align: center;
+            background: $mg;
+
+                &:hover {
+                    background: #eeeeee;
+                }
+
+        }
+    }
+}
+
+.content-wrap {
+    margin: auto;
+    width: 80%;
+    .table-contents {
+
+    }
+
+    .article-list {
+        li {
+            .item {
+                height: 40px;
+            }
+            .title {
+                //height: 10px;
+                font-size: 20px;
+                text-decoration: none;
+
+            }
+            .theme1 {
+                color: #fff;
+            }
+            .theme2 {
+                color: #ff0;
+            }
+        }
+    }
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
