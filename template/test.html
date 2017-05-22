@@ -15,45 +15,89 @@
 </head>
 
 <body>
-    <nav class="navbar row" ms-controller="navController">
+    <div class="header" ms-controller="navController">
         <div class="head-container">
             <a href='#' class="col-md-1 home">Home</a>
-            <ul class="nav-list col-md-10">
-                <li class="col-xs-1" ms-for="title in @titles">{{@title}}</li>
+            <ul class="menu-list col-md-10">
+                <li class="menu-item" ms-for="title in @titles">{{@title}}</li>
             </ul>
-            <a href="#" class="col-md-1 login">Login</a>
+            <a href="#" class="col-md-1 login">Login</a>        
         </div>
-    </nav>
-    <div ms-controller="contentController">
-        <div class="content-wrap">
+    </div>
+    <div class="content-wrap" ms-controller="contentController">
         <div class="row">
-            <div class="col-lg-1 category" >
+            <div class="col-lg-2 category" >
+                <h4>category</h4>
                 <ul class="category-list">
                     <li class="category-item" ms-for="item-cate in @category">{{@item-cate}}</li>
                 </ul>
             </div>
-            <div class="article-list col-lg-9">
-                <ul>
-                    <li ms-for="(tit, content) in @contents" class="article" ms-mouseenter="@callback">
-                        <div class="">
-                            <a class="title">{{@tit}}</a>
-                            <div>{{@content}}</div>
-                            <div class="button-group">
-                                <span></span>
-                                <span></span>
-                                <span></span>
+            <div class="article-content col-lg-7">
+                <div class="tool-group row">
+                    <div class="tool-left">
+                        <span class="">tody</span>
+                        <span class="">week</span>
+                        <span class="">month</span>
+                        <!-- <input type=""> -->
+                    </div>
+                    <div class="tool-right">
+                        <a href="#">write</a>
+                    </div>
+                </div>
+                <ul class="article-list">
+                    <li ms-for="(title, content) in @contents" class="article-item">
+                        <a href="#">
+                            <div class="item-content">
+                                <span class="article-title">{{@title}}</span>
+                                <div class="article-content">conten</div>
+                                <div class="article-info-group row">
+                                    <div class="left-group">
+                                        <span class="name">somiar</span>
+                                        <span class="time">..</span>
+                                    </div>
+                                    <div class="right-group">
+                                        <span class="scan">0</span>
+                                        <span class="like">0</span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </li>
                 </ul>
             </div>
-            <div class="recommend col-lg-offset1 col-lg-2">
-                <h2>..</h2>
+            <div class="recommend col-lg-3">
+                <h4>recommend</h4>
+                <div class="recommend-list">
+                    <div class="recommend-item">
+                        <a href="#">
+                            <p class="recommend-title">title length test .......</p>
+                            <div class="info">
+                                <span class="user">usr</span>
+                                <span></span>
+                                <span class="time"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="recommend-item">
+                        <a href="#">
+                            <p class="recommend-title">t1</p>
+                            <div class="info">
+                                <span class="user">usr</span>
+                                <span></span>
+                                <span class="time"></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>            
-        </div>
-
         </div>
     </div>
 </body>
+
+<footer>
+    <div class="footer-container">
+        <a href="#" class="share"></a>
+    </div>
+</footer>
 
 </html>
